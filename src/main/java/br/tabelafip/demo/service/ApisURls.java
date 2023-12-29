@@ -18,4 +18,16 @@ public class ApisURls {
       //  System.out.println(URL + tipoVeiculo + "/marcas/" + marca + "/modelos");
         return consumerApi.conectarApi(URL + tipoVeiculo + "/marcas/" + marca + "/modelos");
     }
+
+    public String urlModelosAnos(String tipoVeiculo, String marca, String codigoDoVeiculo) {
+        //  System.out.println(URL + tipoVeiculo + "/marcas/" + marca + "/modelos/" + ano);
+        return consumerApi.conectarApi(URL + tipoVeiculo + "/marcas/" + marca + "/modelos/" + codigoDoVeiculo
+                + "/anos");
+    }
+
+    public String urlModelosPorAno(String tipoVeiculo, String marca, String codigoDoVeiculo, String ano) {
+        //  System.out.println(URL + tipoVeiculo + "/marcas/" + marca + "/modelos/" + ano);
+        return consumerApi.conectarApi(URL + tipoVeiculo + "/marcas/" + marca + "/modelos/" + codigoDoVeiculo
+                + "/anos/" + ano);
+    }
 }

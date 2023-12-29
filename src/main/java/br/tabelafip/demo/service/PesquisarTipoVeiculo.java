@@ -2,6 +2,7 @@ package br.tabelafip.demo.service;
 
 import br.tabelafip.demo.models.DadosMarca;
 
+import java.net.URL;
 import java.util.Collections;
 import java.util.List;
 
@@ -12,9 +13,9 @@ public class PesquisarTipoVeiculo {
     private Conversor conversor = new Conversor();
 
 
-    public List<DadosMarca> tipoVeiculo(String tipoVeiculo) {
+    public List<DadosMarca> tipoVeiculo( String tipoVeiculo) {
         if (tipoVeiculo != null) {
-            //  var json = consumerApi.conectarApi(URL + tipoVeiculo + "/marcas");
+          //  var json = consumerApi.conectarApi(URL + tipoVeiculo + "/marcas");
             // System.out.println(URL + tipoVeiculo + "/marcas");
             ApisURls apisURls = new ApisURls();
             var json = apisURls.urlMarcasPorTipoVeiculos(tipoVeiculo);

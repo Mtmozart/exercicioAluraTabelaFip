@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
 import java.util.List;
+import java.util.Map;
 
 public class Conversor implements IConversor {
 
@@ -15,7 +16,7 @@ public class Conversor implements IConversor {
         try {
             return mapper.readValue(json, classe);
         } catch (JsonProcessingException e) {
-            System.out.println("teste erro");
+
             throw new RuntimeException(e);
         }
 
@@ -34,6 +35,8 @@ public class Conversor implements IConversor {
         }
 
     }
+
+
 
 
 }

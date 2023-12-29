@@ -31,7 +31,8 @@ public class Principal {
         if (!marcas.isEmpty()) {
             BuscaMarca buscaVeiculoPorMarcas = new BuscaMarca();
             var marca = buscaVeiculoPorMarcas.buscaVeiculoPorMarcas(marcas);
-            this.pesquisaPorModelo.pesquisaPorModelo(this.tipoVeiculo, marca);
+            var listaModelos = this.pesquisaPorModelo.pesquisaPorModelo(this.tipoVeiculo, marca);
+
         }
     }
 }

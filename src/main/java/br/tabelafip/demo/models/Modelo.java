@@ -1,5 +1,10 @@
 package br.tabelafip.demo.models;
 
-public record Modelo(String codigo, String nome ) {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.util.List;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record Modelo(List<Dados> modelos) {
 
 }
