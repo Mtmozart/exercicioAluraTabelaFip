@@ -1,6 +1,5 @@
 package br.tabelafip.demo.service;
 
-import br.tabelafip.demo.models.DadosMarca;
 import br.tabelafip.demo.models.Modelo;
 import br.tabelafip.demo.models.Dados;
 import br.tabelafip.demo.models.Veiculo;
@@ -8,7 +7,7 @@ import br.tabelafip.demo.models.Veiculo;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class PesquisaPorModelo {
+public class PesquisaPorModeloEAno {
     private Conversor conversor = new Conversor();
     Scanner sc = new Scanner(System.in);
 

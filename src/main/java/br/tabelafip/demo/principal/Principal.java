@@ -19,7 +19,7 @@ public class Principal {
 
     private PesquisarTipoVeiculo pesquisarTipoVeiculo = new PesquisarTipoVeiculo();
 
-    private PesquisaPorModelo pesquisaPorModelo = new PesquisaPorModelo();
+    private PesquisaPorModeloEAno pesquisaPorModelo = new PesquisaPorModeloEAno();
 
 
     Scanner sc = new Scanner(System.in);
