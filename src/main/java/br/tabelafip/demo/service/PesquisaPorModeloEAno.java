@@ -11,7 +11,7 @@ public class PesquisaPorModeloEAno {
     private Conversor conversor = new Conversor();
     Scanner sc = new Scanner(System.in);
 
-    public List<Modelo> pesquisaPorModelo(String tipoVeiculo, String marca) {
+    public List<List<Veiculo>> pesquisaPorModelo(String tipoVeiculo, String marca) {
 
         if (marca != null) {
             ApisURls apisURl = new ApisURls();
@@ -43,7 +43,7 @@ public class PesquisaPorModeloEAno {
 
             System.out.println("\nTodos os veículos filtrados com avaliações por ano: ");
             veiculos.forEach(System.out::println);
-            return Collections.singletonList(modeloLista);
+            return Collections.singletonList(veiculos);
         } else {
             return Collections.emptyList();
         }
