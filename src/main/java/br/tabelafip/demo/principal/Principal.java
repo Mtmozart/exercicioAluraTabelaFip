@@ -1,10 +1,7 @@
 package br.tabelafip.demo.principal;
 
 import br.tabelafip.demo.models.DadosMarca;
-import br.tabelafip.demo.service.BuscaVeiculoPorMarcas;
-import br.tabelafip.demo.service.ConsumerApi;
-import br.tabelafip.demo.service.Conversor;
-import br.tabelafip.demo.service.PesquisarTipoVeiculo;
+import br.tabelafip.demo.service.*;
 
 import java.util.List;
 import java.util.Scanner;
@@ -15,23 +12,26 @@ public class Principal {
 
     private Conversor conversor = new Conversor();
 
-    private final String URL = "https://parallelum.com.br/fipe/api/v1/";
+
     private String tipoVeiculo;
 
     private MenuOptions menu = new MenuOptions();
 
     private PesquisarTipoVeiculo pesquisarTipoVeiculo = new PesquisarTipoVeiculo();
 
+    private PesquisaPorModelo pesquisaPorModelo = new PesquisaPorModelo();
+
 
     Scanner sc = new Scanner(System.in);
 
     public void exibiMenu() {
 
-        List<DadosMarca> marcas = this.pesquisarTipoVeiculo.tipoVeiculo(URL, this.tipoVeiculo = menu.exibiTiposVeiculos());
+        List<DadosMarca> marcas = this.pesquisarTipoVeiculo.tipoVeiculo(this.tipoVeiculo = menu.exibiTiposVeiculos());
 
-        if (!marcas.isEmpty()){
-            BuscaVeiculoPorMarcas buscaVeiculoPorMarcas= new BuscaVeiculoPorMarcas();
-            buscaVeiculoPorMarcas.buscaVeiculoPorMarcas(marcas);
+        if (!marcas.isEmpty()) {
+            BuscaMarca buscaVeiculoPorMarcas = new BuscaMarca();
+            var marca = buscaVeiculoPorMarcas.buscaVeiculoPorMarcas(marcas);
+            this.pesquisaPorModelo.pesquisaPorModelo(this.tipoVeiculo, marca);
         }
     }
 }

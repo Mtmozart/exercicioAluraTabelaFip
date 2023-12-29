@@ -12,10 +12,12 @@ public class PesquisarTipoVeiculo {
     private Conversor conversor = new Conversor();
 
 
-    public List<DadosMarca> tipoVeiculo( String URL, String tipoVeiculo) {
+    public List<DadosMarca> tipoVeiculo(String tipoVeiculo) {
         if (tipoVeiculo != null) {
-            var json = consumerApi.conectarApi(URL + tipoVeiculo + "/marcas");
+            //  var json = consumerApi.conectarApi(URL + tipoVeiculo + "/marcas");
             // System.out.println(URL + tipoVeiculo + "/marcas");
+            ApisURls apisURls = new ApisURls();
+            var json = apisURls.urlMarcasPorTipoVeiculos(tipoVeiculo);
             var listaMarcas = conversor.obterlista(json, DadosMarca.class);
             listaMarcas.forEach(System.out::println);
             return listaMarcas;
